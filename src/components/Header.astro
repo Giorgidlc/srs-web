@@ -1,0 +1,33 @@
+---
+import ButtonCTA from "@components/ButtonCTA.astro"
+---
+
+<section class="header-title">
+  <h1>Te Ayudo a Conseguir Entrevistas de Trabajo en España 🙌</h1>
+  <ButtonCTA
+   phoneNumber="+34666822778" 
+   message="Hola! Me gustaría agendar una llamada para hablar sobre tu servicio. ¿Cuál es tu disponibilidad?"
+  />
+</section>
+
+
+<style>
+  .header-title {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  height: 60vb;
+  gap: 4rem;
+  padding: clamp(1rem, 0.714rem + 1.43vw, 2rem);
+  
+  & h1 {
+    text-align: center;
+    font-weight: 600;
+  }
+
+
+  @media (width < 500px) {
+    height: 81vb;
+  }
+}
+</style>

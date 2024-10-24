@@ -1,0 +1,43 @@
+<article class="wrap-container">
+  <div class="text-container">
+    <h2>¿Cómo lo hago?</h2>
+    <p>
+      Durante toda mi experiencia profesional y personal he ido buscando un método completo para tener mayores resultados. <strong>No sólo se trata de modificar el CV y el LinkedIn</strong>, hay que considerar varios pasos, ser planificado/a, disciplinado/a para que tu búsqueda sea más estratégica y adquieras las herramientas necesarias para alcanzar la oportunidad para poder estar en este maravilloso país.
+    </p>
+  </div>
+  <figure class="image-container">
+    <img src="src/assets/graph-how-do-it.webp" alt="HOla" />
+  </figure>
+</article>
+
+<style>
+  .wrap-container {
+    flex-wrap: wrap;
+    display: flex;
+    background-color: var(--color-contrast-3);
+    gap: 2rem;
+    padding: 4rem clamp(1rem, 0.714rem + 1.43vw, 2rem);
+    
+  }
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    flex: 2 1 30%;
+    color: var(--color-base);
+    align-items: start;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .image-container {
+    display: flex;
+    flex: 1 1 auto;
+    height: max(40dvh);
+
+    & img {
+      flex-grow: 1;
+      object-fit: contain;
+    }
+  }
+</style>

@@ -1,0 +1,52 @@
+---
+import Accordion from './Accordion.astro';
+import ButtonCTA from './ButtonCTA.astro';
+
+const items = [
+  {
+    title: 'Preparación, Simulación y Feedback ',
+    content:
+      'La Preparación, Simulación y Feedback de Entrevista será por Competencias (Las más comúnes usadas por reclutadores de RRHH) para ser más efectivos y poder pasar a las siguientes fases.',
+  },
+  {
+    title: '¿Cuánto dura el acompañamiento?',
+    content:
+      '2 meses y 4 sesiones mínimas (el servicio no termina hasta que tengas al menos una entrevista).',
+  },
+];
+---
+
+<article class="after-service-section-wrap">
+  <h3>Y una vez que consigas una entrevista…</h3>
+  <Accordion items={items} client:load />
+  <p>
+    No te prometo el trabajo de tus sueños, pero sí que tendrás un perfil mucho más
+    enfocado con el cuál tus posibilidades de obtener entrevistas en España
+    aumentarán.
+  </p>
+  <p>
+    <strong>¡Quieres más detalles del ¿Cómo lo hago? conversemos...</strong>
+  </p>
+  <ButtonCTA
+    phoneNumber="your-phone-number"
+    message="¡Hola! Me gustaría obtener más información sobre tus servicios."
+    client:load
+  />
+</article>
+
+
+
+<style>
+  .after-service-section-wrap {
+  display: grid;
+  place-content: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 4rem clamp(1rem, 0.714rem + 1.43vw, 2rem);
+  justify-items: center;
+
+  & a {
+    width: min-content;
+  }
+}
+</style>

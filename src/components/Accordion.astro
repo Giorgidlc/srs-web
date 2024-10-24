@@ -1,0 +1,48 @@
+---
+interface Item {
+  title: string;
+  content: string;
+}
+
+const { items } = Astro.props;
+---
+
+<div>
+  {items.map((item: Item) => (
+    <details class="accordion-wrap">
+      <summary class="accordion-title">
+        {item.title}
+      </summary>
+      <p class="accordion-content">{item.content}</p>
+    </details>
+  ))}
+</div>
+
+
+
+<style>
+  .accordion-wrap {
+  margin-bottom: 0.5rem;
+  width: max(356px, 60vw);
+  border: 1px solid var(--color-contrast);
+  border-radius: 5px;
+  
+}
+
+.accordion-title {
+  font-size: clamp(0.8rem, 0.707rem + 0.46vw, 1.125rem);
+  padding: 1rem 0.8rem;
+  cursor: pointer;
+  font-weight: 600;
+  border-bottom: 0.9px solid var(--color-contrast);
+}
+
+.accordion-content {
+  padding: 2rem;
+  width: min(40rem, max-content);
+  text-align: center;
+  background-color: var(--color-contrast-2);
+  color: white;
+
+}
+</style>

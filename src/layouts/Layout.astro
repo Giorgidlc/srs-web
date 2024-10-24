@@ -1,0 +1,129 @@
+---
+import HeaderNav from "@components/HeaderNav.astro";
+import Footer from "@components/Footer.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    
+/>
+    <title>{title}</title>
+  </head>
+  <body>
+    <HeaderNav />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </body>
+</html>
+
+<style is:global>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --color-base: #e0e1ee;
+    --color-base-2: #009697;
+    --color-contrast: #30638e;
+    --color-contrast-2: #00798c;
+    --color-contrast-3: #003d5b;
+    --color-acent: #d1495b;
+    --color-acent-2: #edae49;
+  
+
+    @font-face {
+      font-family: "Baloo 2";
+      src: url("./public/fonts/Baloo2-VariableFont_wght.ttf");
+    }
+
+    font-family: "Baloo 2", Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light;
+    color: var(--color-contrast-3);
+    background-color: var(--color-base);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a {
+    font-weight: 500;
+    color: var(--color-base-2);
+    text-decoration: inherit;
+  }
+  a:hover {
+    color: var(--color-acent-2);
+  }
+
+  body {
+    display: grid;
+    margin: 0 auto;
+    min-width: 320px;
+    min-height: 100dvh;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  h1 {
+    font-size: clamp(3rem, 2.143rem + 4.29vw, 6rem);
+    line-height: clamp(3.125rem, 2.304rem + 4.11vw, 5.5rem);
+    font-weight: 600;
+  }
+
+  h2 {
+    font-size: clamp(2.75rem, 2.464rem + 1.43vw, 3.75rem);
+    line-height: clamp(2.75rem, 2.464rem + 1.43vw, 3.75rem);
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: clamp(1.8rem, 1.671rem + 0.64vw, 2.25rem);
+    line-height: clamp(1.8rem, 1.671rem + 0.64vw, 2.25rem);
+    font-weight: 500;
+  }
+
+  h4 {
+    font-size: clamp(0.8rem, 0.707rem + 0.46vw, 1.125rem);
+  }
+
+  p {
+    font-size: (1rem, 0.786rem + 1.07vw, 1.75rem);
+  }
+
+  button {
+    border-radius: 50px;
+    border: 1px solid transparent;
+    font-size: clamp(1rem, 0.786rem + 1.07vw, 1.75rem);
+    font-weight: 500;
+    font-family: inherit;
+    color: var(--color-base);
+    background-color: var(--color-base-2);
+    cursor: pointer;
+    transition: border-color 0.25s;
+  }
+  button:hover {
+    border-color: var(--color-contrast-3);
+  }
+  button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+</style>

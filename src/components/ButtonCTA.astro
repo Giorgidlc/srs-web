@@ -1,0 +1,45 @@
+---
+interface Props {
+  phoneNumber: string;
+  message: string;
+}
+
+const { phoneNumber, message } = Astro.props as Props;
+
+const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+---
+
+<a
+  href={whatsappUrl}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="whatsapp-button"
+>
+  <span>
+    <img src="src/assets/whatsApp-icon.webp" alt="icono-whatsapp" />
+  </span>
+  ¡Agenda tu llamada gratuita!
+</a>
+
+
+
+
+<style>
+  .whatsapp-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  width: min(320px, min-content);
+  padding: 0.6rem 1.2rem;
+  text-wrap: nowrap;
+  & span {
+    display: flex;
+    height: 4vb;
+    max-width: 60px;
+    & img {
+      flex-grow: 1;
+    }
+  }
+}
+</style>

@@ -1,0 +1,82 @@
+---
+import { Slider } from '@components/Slider.jsx';
+
+const testimonialCards = [
+  {
+    id: 1,
+    name: 'John Doe',
+    quote: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
+    image: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+  },
+  {
+    id: 2,
+    name: 'Jane Smith',
+    quote: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    image: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+  },
+  {
+    id: 3,
+    name: 'Bob Johnson',
+    quote:
+      'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    image: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+  },
+];
+---
+
+<article>
+  <div class="wrap-container-testimonial">
+    <div class="container-left">
+      <h2>Lo que mis clientes opinan de mí</h2>
+    </div>
+
+    <div class="cards-container-right">
+      <Slider  client:load slides={testimonialCards} />
+    </div>
+  </div>
+</article>
+
+
+
+<style>
+  .wrap-container-testimonial {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: var(--color-base-2);
+  color: var(--color-base);
+  padding: 5rem clamp(1rem, 0.714rem + 1.43vw, 2rem);
+  height: max-content;
+  align-items: center;
+  gap: 4rem;
+
+}
+
+.container-left {
+  display: flex;
+  flex-direction: column;
+  width: max(50vi, 320px);
+  flex: 2 1 auto;
+
+  & h2{
+    font-size: clamp(3.125rem, 2.161rem + 4.82vw, 6.5rem);
+    line-height: clamp(3.125rem, 2.304rem + 4.11vw, 6rem);
+    font-weight: 600;
+  }
+
+}
+
+.cards-container-right {
+  display: flex;
+  flex: 1 1 auto;
+  width: max(38vi, 320px);
+  max-width: max(40vi, 320);
+  min-height: 50vb;
+}
+
+</style>

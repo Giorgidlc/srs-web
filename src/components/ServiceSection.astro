@@ -1,0 +1,93 @@
+---
+import ServicesTier from "@components/ServicesTier.astro"
+
+interface Feature {
+  description: string;
+  tooltipText: string;
+}
+const features: Feature[] = [
+
+  {
+    description: "Diagnóstico del Perfil.",
+    tooltipText: "Objetivos Profesionales y Mercado Español"
+  },
+  {
+    description: "Adaptación y revisión de CV.",
+    tooltipText: "descripción de tooltip"
+  },
+  {
+    description: "Perfil de LinkedIn.",
+    tooltipText: "Funcionamiento en la visibilidad/búsqueda de oportunidades."
+  },
+  {
+    description: "Planificación de objetivos",
+    tooltipText: "Objetivos a corto y mediano plazo en la búsqueda de empleo."
+  },
+  {
+    description: "Análisis de Job Description y Autocandidatura.",
+    tooltipText: "descripción de tooltip"
+  },
+  {
+    description: "Seguimiento de Empleabilidad y Contactos.",
+    tooltipText: "descripción de tooltip"
+  }
+  
+]
+---
+
+<section class='services-wrap'>
+  <h2 class="services-title">El Servicio</h2>
+  <ServicesTier
+    title='Spain Career Path'
+    description='Quieres más detalles del ¿Cómo lo hago? ¡Conversemos!'
+    features={features}
+    ctaText=' Agenda tu Llamada Gratuita'
+  />
+  <figure class="graph01">
+    <img src="src/assets/graph-01.svg" alt="gráfico-01" />
+  </figure>
+  <figure class="graph02">
+    <img src="src/assets/graph-02.svg" alt="gráfico-02" />
+  </figure>
+</section>
+
+<style>
+  .services-wrap {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 4rem clamp(1rem, 0.714rem + 1.43vw, 2rem);
+  gap:4rem;
+  overflow: hidden;
+}
+
+.services-title {
+  display: flex;
+  text-align: center;
+
+}
+
+.graph01 {
+  position: absolute;
+  width: 30vi;
+  left: -100px;
+  top: 8%;
+  transform: translateY(-50%); 
+  transform: scaleY(-1);
+}
+
+.graph02 {
+  position: absolute;
+  width: 25vi;
+  right: -250px;
+  top: 50%;
+  transform: translateY(-50%); 
+  rotate: 270deg;
+}
+
+@media (width < 425px) {
+  .graph01, .graph02 {
+    display: none;
+  }
+}
+</style>
