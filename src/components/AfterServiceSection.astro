@@ -4,14 +4,29 @@ import ButtonCTA from './ButtonCTA.astro';
 
 const items = [
   {
-    title: 'Preparación, Simulación y Feedback ',
+    title: '¿Cuánto dura el servicio?',
     content:
-      'La Preparación, Simulación y Feedback de Entrevista será por Competencias (Las más comúnes usadas por reclutadores de RRHH) para ser más efectivos y poder pasar a las siguientes fases.',
+      'Entre 1 - 2 meses dependiendo de disponibilidad de candidato y consultor',
   },
   {
-    title: '¿Cuánto dura el acompañamiento?',
+    title: '¿Cuántas sesiones son , en qué modalidad y cuánto dura cada una?',
     content:
-      '2 meses y 4 sesiones mínimas (el servicio no termina hasta que tengas al menos una entrevista).',
+      'Mínimo 4 y Máximo 6 dependiendo de las necesidades del perfil, online y entre 60-90 minutos por sesión.',
+  },
+  {
+    title: '¿Conseguiré un empleo rápido?',
+    content:
+      'La búsqueda depende de varios factores, no prometo encontrar trabajo rápido pero sí focalizar la búsqueda y aumentar las posibilidades de generar más de una entrevista en 3 meses. Si no se consigue ninguna el servicio continúa hasta que se genere al menos una.',
+  },
+  {
+    title: '¿Revisamos la parte legal de conseguir trabajo en España?',
+    content:
+      'No, es por esto que también en primera instancia en la llamada inicial conversamos de las posibilidades y de los tiempos estimados (hay que considerar que dependiendo del tipo de estancia los tiempos de resolución en promedio son entre 3 - 6 meses en este país).',
+  },
+  {
+    title: '¿El CV debo hacerlo yo?',
+    content:
+      'No, es un trabajo en conjunto. El traspaso al modelo enviado depende del candidato, luego revisamos y corregimos en conjunto. Finalmente se traslada a una plantilla simple y ordenada seleccionada por el candidato.',
   },
 ];
 ---
@@ -28,7 +43,7 @@ const items = [
     <strong>¡Quieres más detalles del ¿Cómo lo hago? conversemos...</strong>
   </p>
   <ButtonCTA
-    phoneNumber="your-phone-number"
+    phoneNumber="+34666822778"
     message="¡Hola! Me gustaría obtener más información sobre tus servicios."
     client:load
   />
@@ -42,8 +57,9 @@ const items = [
   place-content: center;
   justify-content: center;
   gap: 2rem;
-  padding: 4rem clamp(1rem, 0.714rem + 1.43vw, 2rem);
+  padding: 0rem clamp(1rem, 0.714rem + 1.43vw, 2rem) 4rem;
   justify-items: center;
+  z-index: -10;
 
   & a {
     width: min-content;

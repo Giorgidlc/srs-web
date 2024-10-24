@@ -16,6 +16,7 @@ const { title, description, ctaText, features } = Astro.props;
 
 <div class='card-service'>
   <h3>{title}</h3>
+  <hr>
   <p>{description} </p>
   <button>{ctaText}</button>
   <ul>
@@ -39,6 +40,7 @@ const { title, description, ctaText, features } = Astro.props;
 <style>
   .card-service {
   display: flex;
+  align-items: center;
   flex-direction: column;
   padding: clamp(2.125rem, 1.875rem + 1.25vw, 3rem);
   background-color: var(--color-contrast-3);
@@ -46,6 +48,12 @@ const { title, description, ctaText, features } = Astro.props;
   min-height: 500px;
   border-radius: 2rem;
   gap: 2rem;
+
+  & hr {
+    border: 0.5px solid var(--color-base);
+    width: 100%;
+  }
+
 }
 
 .card-service button {
@@ -66,7 +74,7 @@ const { title, description, ctaText, features } = Astro.props;
 .card-service ul li {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 span.tooltip-container {
@@ -86,9 +94,9 @@ span.tooltip-text {
   color:  var(--color-base);
   text-align: center;
   border-radius: 6px;
-  padding: 5px 0;
+  padding: 1rem;
   position: absolute;
-  z-index: 1;
+  z-index: 999;
   top: -5px;
   right: 0%;
   opacity: 0;

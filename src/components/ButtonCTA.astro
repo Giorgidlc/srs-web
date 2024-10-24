@@ -31,8 +31,15 @@ const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(mess
   justify-content: center;
   gap: 0.8rem;
   width: min(320px, min-content);
+  background-color: var(--color-base-2);
+  color: var(--color-base);
+  font-size: clamp(1rem, 0.786rem + 1.07vw, 1.75rem);
+  border-radius: 2rem;
+  border: 1px solid transparent;
   padding: 0.6rem 1.2rem;
   text-wrap: nowrap;
+  transition: border-color 0.25s, background-color 0.25s ease-out;
+ 
   & span {
     display: flex;
     height: 4vb;
@@ -40,6 +47,11 @@ const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(mess
     & img {
       flex-grow: 1;
     }
+  }
+
+  &:hover {
+    background-color: var(--color-contrast-2);
+    border-color: var(--color-base);
   }
 }
 </style>

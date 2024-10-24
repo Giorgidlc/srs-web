@@ -8,35 +8,36 @@ interface Feature {
 const features: Feature[] = [
 
   {
-    description: "Diagnóstico del Perfil.",
-    tooltipText: "Objetivos Profesionales y Mercado Español"
+    description: "Diagnóstico del Perfil, Objetivos Profesionales y Mercado Español.",
+    tooltipText: "Análisis Laboral y Académico, Plan de Carrera y Posibilidades en España."
   },
   {
-    description: "Adaptación y revisión de CV.",
-    tooltipText: "descripción de tooltip"
+    description: "Adaptación y Revisión de CV.",
+    tooltipText: "Envío de Modelo de CV y luego del traspaso de información, revisión en conjunto y adaptación al mercado local."
   },
   {
-    description: "Perfil de LinkedIn.",
-    tooltipText: "Funcionamiento en la visibilidad/búsqueda de oportunidades."
+    description: "Perfil de LinkedIn, Visibilidad y Búsqueda de Oportunidades.",
+    tooltipText: `Revisión de Perfil, Palabras claves, Información relevante. 
+    Activación, Ampliación de red focalizada y formas para obtener una mayor visibilidad.`
   },
   {
-    description: "Planificación de objetivos",
-    tooltipText: "Objetivos a corto y mediano plazo en la búsqueda de empleo."
+    description: "Análisis de Job Description y Autocandidaturas.",
+    tooltipText: "Revisión en detalle de ofertas para focalizar la búsqueda y creación de mensajes para generar posibles oportunidades que no están publicadas (mercado oculto)."
   },
   {
-    description: "Análisis de Job Description y Autocandidatura.",
-    tooltipText: "descripción de tooltip"
+    description: "Preparación de Entrevista por Competencias (RRHH).",
+    tooltipText: "Simulación de entrevista según posición deseada del candidato y feedback posterior."
   },
   {
-    description: "Seguimiento de Empleabilidad y Contactos.",
-    tooltipText: "descripción de tooltip"
+    description: "*Seguimiento de empleabilidad y objetivos.",
+    tooltipText: "(sesión extra): Revisión de resultados  y estrategia luego de 30 días posteriores a la simulación de entrevista"
   }
   
 ]
 ---
 
 <section class='services-wrap'>
-  <h2 class="services-title">El Servicio</h2>
+  <h2 class="services-title">¿Qué Incluye el Servicio?</h2>
   <ServicesTier
     title='Spain Career Path'
     description='Quieres más detalles del ¿Cómo lo hago? ¡Conversemos!'
@@ -56,9 +57,10 @@ const features: Feature[] = [
   position: relative;
   display: grid;
   place-items: center;
-  padding: 4rem clamp(1rem, 0.714rem + 1.43vw, 2rem);
+  padding: 4rem clamp(1rem, 0.714rem + 1.43vw, 2rem) 8rem;
   gap:4rem;
   overflow: hidden;
+  
 }
 
 .services-title {
