@@ -2,16 +2,27 @@
 
 <nav class="header-logo">
   <img class="logo" src="/imagotipo-srs.svg" alt="Logotipo-SRS-Empleabilidad-y-Formación"/>
+  <!-- <ul class="nav-list">
+    <li><a href="#about">¿Quién Soy?</a></li>
+    <li><a href="#how-do-it">¿Cómo lo Hago?</a></li>
+    <li><a href="#service">El Servicio</a></li>
+    <li><a href="#form-contact">Contáctame</a></li>
+  </ul> -->
 </nav>
 
 
 <style>
   .header-logo {
   display: grid;
-  place-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: ". logo nav";
+  align-items: center;
+  justify-items: center;
+    
 }
 
 .logo {
+  grid-area: logo;
   height: clamp(7rem, 6.143rem + 4.29vw, 10rem);
   padding: 0rem;
   will-change: filter;
@@ -21,6 +32,27 @@
 
 .logo:hover {
   filter: drop-shadow(0 0 2em var(--color-contrast-2));
+}
+
+.nav-list {
+  grid-area: nav;
+  display: flex; 
+  
+  list-style-type: none;
+  gap: 1rem;
+  will-change: filter;
+  
+
+  & li a {
+    font-weight: 500;
+    transition: filter 300ms;
+  } 
+
+  & li a:hover {
+    cursor: pointer;
+    filter: drop-shadow(0 0 3em var(--color-contrast-2));
+  } 
+
 }
 
 @keyframes logo-spin {

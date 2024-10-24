@@ -1,6 +1,7 @@
 ---
 import ServicesTier from "@components/ServicesTier.astro"
 
+
 interface Feature {
   description: string;
   tooltipText: string;
@@ -36,7 +37,7 @@ const features: Feature[] = [
 ]
 ---
 
-<section class='services-wrap'>
+<section class='services-wrap' id="service">
   <h2 class="services-title">¿Qué Incluye el Servicio?</h2>
   <ServicesTier
     title='Spain Career Path'

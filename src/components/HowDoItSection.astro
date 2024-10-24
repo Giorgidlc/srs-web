@@ -1,21 +1,86 @@
-<article class="wrap-container">
+---
+import StepByStep from '@components/StepByStep.astro'
+
+interface Cards {
+  title: string;
+  icon: string;
+  features: { description: string }[];
+}
+const cards: Cards[] = [
+  {
+    title: 'Autoconocimiento',
+    icon: `
+      <svg width="100%" height="100%" viewBox="0 0 24   24" fill="none" stroke="var(--color-base)"  stroke-width="1.3" stroke-linecap="round"  stroke-linejoin="round" class="lucide  lucide-brain"><path d="M12 5a3 3 0 1 0-5.997.125   4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1   0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4   0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1   12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4. 5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 . 399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401  6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/ ><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path  d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967   17.484A4 4 0 0 1 18 18"/></svg>
+    `,
+    features: [
+      { description: 'Fortalezas'},
+      { description: 'Logros'},
+      { description: 'Competencias'},
+      { description: 'Aspectos a mejorar'}
+      
+    ]
+  },
+  {
+    title: 'Planificación',
+    icon: `
+      <svg  width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="var(--color-base)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clipboard-list"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>
+    `,
+    features: [
+      { description: 'Objetivo Profesional'},
+      { description: 'Estrategia'},
+      { description: 'Disciplina'},
+      { description: 'Pequeñas Metas'}
+      
+    ]
+  },
+  {
+    title: 'Formación',
+    icon: `
+      <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="var(--color-base)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+    `,
+    features: [
+      { description: 'Cursos o Postgrados que nos permitan llegar a nuestros objetivos según nuestras posibilidades'},      
+    ]
+  },
+  {
+    title: 'Marca Personal',
+    icon: `
+      <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="var(--color-base)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>
+    `,
+    features: [
+      { description: 'Visibilidad y valor como profesional'},
+   
+      
+    ]
+  }
+]
+---
+<article class="wrap-container" id="how-do-it">
   <div class="text-container">
-    <h2>¿Cómo lo hago?</h2>
+    <h2>¿Cómo lo Hago?</h2>
     <p>
       Durante toda mi experiencia profesional y personal he ido buscando un método completo para tener mayores resultados. <strong>No sólo se trata de modificar el CV y el LinkedIn</strong>, hay que considerar los <strong>4 pilares de la Empleabilidad</strong>. Durante las sesiones trabajamos sobre éstos con el objetivo de alcanzar objetivos en el corto/mediano plazo.
     </p>
   </div>
-  <figure class="image-container">
-    <img src="src/assets/graph-how-do-it.webp" alt="HOla" />
-  </figure>
+  <div class="infograph-container">
+    {
+      cards.map((card) => 
+      <StepByStep 
+          title ={card.title}
+          icon={card.icon}
+          features={card.features}
+      />
+    )}
+    
+  </div>
 </article>
 
 <style>
   .wrap-container {
-    flex-wrap: wrap;
     display: flex;
+    flex-wrap: wrap;
     background-color: var(--color-contrast-3);
-    gap: 2rem;
+    gap: 3rem;
     padding: 4rem clamp(1rem, 0.714rem + 1.43vw, 2rem);
     
   }
@@ -23,21 +88,24 @@
   .text-container {
     display: flex;
     flex-direction: column;
-    flex: 2 1 30%;
+    flex: 1 1 25%;
     color: var(--color-base);
     align-items: start;
     justify-content: center;
     gap: 2rem;
+  
   }
 
-  .image-container {
-    display: flex;
-    flex: 1 1 auto;
-    height: max(40dvh);
+  .infograph-container {
+    display: grid;
+    place-content: center;
+    grid-template-columns:  repeat(
+      auto-fit, minmax(180px, 300px)
+    );
+    row-gap: 2rem;
+    flex: 2 1 auto;
+    
+  
 
-    & img {
-      flex-grow: 1;
-      object-fit: contain;
-    }
   }
 </style>

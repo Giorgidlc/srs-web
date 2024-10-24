@@ -1,4 +1,4 @@
-<section class="form-container-wrap">
+<section class="form-container-wrap" id="form-contact">
   <div class="form-container__title">
     <h2>¡Resuelve tus dudas!</h2>
     <p>
@@ -8,13 +8,13 @@
     </p>
   </div>
   <form class="form-container" action="">
-    <label class="form-label">
+    <label class="form-label" for="name">
       <input type="text" id="name" placeholder="¿Cuál es tu nombre?" />
     </label>
-    <label class="form-label">
+    <label class="form-label" for="email">
       <input type="email" id="email" placeholder="¿Cuál es tu email?" />
     </label>
-    <label class="form-label">
+    <label class="form-label" for="message">
       <textarea
         name="message"
         id="message"
@@ -23,7 +23,7 @@
         placeholder="¿En qué podemos ayudarte?"></textarea>
     </label>
     <label>
-      <input type="checkbox" name="checkbox" id="checkbox" /> Acepto la política
+      <input type="checkbox" name="checkbox" id="checkbox" required /> Acepto la política
       de privacidad.
     </label>
 
