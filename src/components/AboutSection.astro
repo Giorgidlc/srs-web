@@ -1,6 +1,6 @@
 <article class='wrap-container--about' id="about">
   <div class="image-container">
-    <img src="src/assets/sebastian-rotman-saffie.webp" alt="Sebastián-Rotman" />
+    <img loading="lazy" src="src/assets/sebastian-rotman-saffie.webp" alt="Sebastián-Rotman" />
   </div>
 
   <div class='text-container--about'>
@@ -20,13 +20,13 @@
       <br /><br />
       Desde el 2018 asesoro de manera particular y el <strong>año 2022 decidí crear SRS Empleabilidad y Formación</strong>.
       <br /><br />
-      <strong>El 2023 fue un año movido para mí</strong>, estuve en 5 procesos diferentes y en </strong>Abril del 2023 entré a Factoría F5 como Coordinador Sociolaboral para el primer proyecto de la Asociación en el Orange Digital Center</strong>. 
+      El 2023 fue un año movido para mí, estuve en 5 procesos diferentes y en </strong>Abril del 2023 entré a <strong>Factoría F5 como Coordinador Sociolaboral</strong> para el primer proyecto de la Asociación en el <strong>Orange Digital Center</strong>. 
       <br /><br />
-      Durante el 2024 <strong>diseñé el primer piloto de seguimiento de empleabilidad de la institución a nivel nacional</strong> y sigo acompañando individualmente a talentos que quieren tener una oportunidad profesional en España.
+      Durante el 2024 <strong>diseñé el primer piloto de Seguimiento de Empleabilidad de la Institución a nivel nacional</strong> y sigo acompañando individualmente a talentos que quieren tener una oportunidad profesional en España.
       <br /><br />
       Siempre me ha gustado acompañar a personas en sus procesos de búsqueda profesional y vital, <strong>no hay un camino lineal</strong> y muchas veces necesitamos un guía que nos muestre las opciones para que <strong>nosotros podamos decidir</strong>.
       <br /><br />
-      Si aún estás pensando si embarcarte en un proceso pero no sabes si el acompañamiento es para tí, <strong>¡conversemos!</strong>
+      Si aún estás pensando si embarcarte en un proceso pero no sabes si el acompañamiento es para tí, <strong>¡Conversemos!</strong>
     </p>
   </div>
 </article>
@@ -37,16 +37,29 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  gap: 3rem;
+  gap: 5rem;
   padding: 4rem clamp(1rem, 0.714rem + 1.43vw, 2rem);
+
+  & p {
+    text-align: justify;
+    text-wrap: pretty;
+    padding-right: 4rem;
+  }
 
   @media (max-width: 1024px) and (min-width: 768px){
     flex-direction: column;
     align-items: center;
+
+    & p {
+      padding-right: clamp(1rem, 0.714rem + 1.43vw, 2rem);
+    }
   }
 
   @media (width <= 425px) {
     justify-content: center;
+    & p {
+      padding-right: clamp(1rem, 0.714rem + 1.43vw, 2rem);
+    }
   }
   
 }

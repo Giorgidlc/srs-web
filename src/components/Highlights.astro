@@ -1,0 +1,109 @@
+---
+interface LinkedInArticle {
+  title: string;
+  description: string;
+  href: string;
+  image: string;
+}
+
+const article1: LinkedInArticle = {
+  title: "¿A qué chilenos les conviene probar suerte en España?",
+  description: "Descripción del artículo 1",
+  href: "https://www.lun.com/Pages/NewsDetail.aspx?dt=2024-01-01&EsAviso=0&PaginaId=16&bodyid=0",
+  image: "src/assets/news-01.webp",
+};
+
+const article2: LinkedInArticle = {
+  title: "Un mundo muchos talentos",
+  description: "Descripción del artículo 2",
+  href: "https://www.linkedin.com/events/talentchat-unmundo-muchostalent7140975528026578945/comments/.",
+  image: "src/assets/news-02.webp",
+};
+
+const article3: LinkedInArticle = {
+  title: "Búsqueda de Empleo y Formación",
+  description: "Descripción del artículo 3",
+  href: "https://www.linkedin.com/events/chilevsespa-a-b-squedadeempleoy6989134285983125504/",
+  image: "src/assets/news-03.webp",
+};
+
+const articles: LinkedInArticle[] = [article1, article2, article3];
+---
+
+<article class="wrap-container-news">
+  <h3>Artículos Destacados</h3>
+  <div class="container-news-highlights">
+    {
+      articles.map((article) => (
+        <div class="card-news-highlights">
+          <a target="_blank" href={article.href}>
+            <img src={article.image} alt={article.title} />
+          </a>
+          <h5>{article.title}</h5>
+        </div>
+      ))
+    }
+  </div>
+</article>
+
+<style>
+
+  .wrap-container-news{
+
+    background-color: var(--color-contrast-3);
+    padding: 4rem 0;
+    & h3 {
+      color: var(--color-base);
+      padding: 0 clamp(1rem, 0.714rem + 1.43vw, 2rem) 1rem;
+    }
+
+  }
+
+  .container-news-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 1rem clamp(1rem, 0.714rem + 1.43vw, 2rem);
+    gap: 1rem;
+
+  }
+
+  .card-news-highlights {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-contrast);
+
+    & a {
+      display: flex;
+      height: max(32dvh);
+      & img {
+        width: 100%;
+        object-fit: cover;
+        mix-blend-mode: soft-light;
+      }
+    }
+
+    & h5 {
+      position: absolute;
+      text-align: left;
+      color: var(--color-contrast-3);
+      width: auto;
+      max-width: 50%;
+      bottom: 1rem;
+      left: 1rem;
+      text-transform: uppercase;
+      background-color: var(--color-acent-2);
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+
+      &:hover{
+        white-space: normal;
+        overflow: visible;
+        width: auto;
+      }
+    }
+  }
+</style>

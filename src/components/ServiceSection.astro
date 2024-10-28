@@ -1,50 +1,76 @@
 ---
-import ServicesTier from "@components/ServicesTier.astro"
-
+import ServicesTier from "@components/ServicesTier.astro";
 
 interface Feature {
   description: string;
   tooltipText: string;
 }
-const features: Feature[] = [
 
-  {
-    description: "Diagnóstico del Perfil, Objetivos Profesionales y Mercado Español.",
-    tooltipText: "Análisis Laboral y Académico, Plan de Carrera y Posibilidades en España."
-  },
-  {
-    description: "Adaptación y Revisión de CV.",
-    tooltipText: "Envío de Modelo de CV y luego del traspaso de información, revisión en conjunto y adaptación al mercado local."
-  },
-  {
-    description: "Perfil de LinkedIn, Visibilidad y Búsqueda de Oportunidades.",
-    tooltipText: `Revisión de Perfil, Palabras claves, Información relevante. 
-    Activación, Ampliación de red focalizada y formas para obtener una mayor visibilidad.`
-  },
-  {
-    description: "Análisis de Job Description y Autocandidaturas.",
-    tooltipText: "Revisión en detalle de ofertas para focalizar la búsqueda y creación de mensajes para generar posibles oportunidades que no están publicadas (mercado oculto)."
-  },
-  {
-    description: "Preparación de Entrevista por Competencias (RRHH).",
-    tooltipText: "Simulación de entrevista según posición deseada del candidato y feedback posterior."
-  },
-  {
-    description: "*Seguimiento de empleabilidad y objetivos.",
-    tooltipText: "(sesión extra): Revisión de resultados  y estrategia luego de 30 días posteriores a la simulación de entrevista"
+class ServiceData {
+  title: string;
+  description: string;
+  features: Feature[];
+
+  constructor(title: string, description: string, features: Feature[]) {
+    this.title = title;
+    this.description = description;
+    this.features = features;
   }
-  
-]
+}
+
+const services: ServiceData[] = [
+  new ServiceData(
+    "Spain Career Path",
+    "Quieres más detalles del ¿Cómo lo hago? ¡Conversemos!",
+    [
+      {
+        description:
+          "Diagnóstico del Perfil, Objetivos Profesionales y Mercado Español.",
+        tooltipText:
+          "Análisis Laboral y Académico, Plan de Carrera y Posibilidades en España.",
+      },
+      {
+        description: "Adaptación y Revisión de CV.",
+        tooltipText:
+          "Envío de Modelo de CV y luego del traspaso de información, revisión en conjunto y adaptación al mercado local.",
+      },
+      {
+        description:
+          "Perfil de LinkedIn, Visibilidad y Búsqueda de Oportunidades.",
+        tooltipText: `Revisión de Perfil, Palabras claves, Información relevante. Activación, ampliación de red focalizada y formas para obtener una mayor visibilidad.`,
+      },
+      {
+        description: "Análisis de Job Description y Autocandidaturas.",
+        tooltipText:
+          "Revisión en detalle de ofertas para focalizar la búsqueda y creación de mensajes para generar posibles oportunidades que no están publicadas (mercado oculto).",
+      },
+      {
+        description: "Preparación de Entrevista por Competencias (RRHH).",
+        tooltipText:
+          "Simulación de entrevista según posición deseada del candidato y feedback posterior.",
+      },
+      {
+        description: "*Seguimiento de empleabilidad y objetivos.",
+        tooltipText:
+          "Sesión extra: Revisión de resultados y estrategia luego de 30 días posteriores a la simulación de entrevista",
+      },
+    ],
+  ),
+];
+
+
 ---
 
-<section class='services-wrap' id="service">
+<section class="services-wrap" id="service">
   <h2 class="services-title">¿Qué Incluye el Servicio?</h2>
-  <ServicesTier
-    title='Spain Career Path'
-    description='Quieres más detalles del ¿Cómo lo hago? ¡Conversemos!'
-    features={features}
-    ctaText=' Agenda tu Llamada Gratuita'
-  />
+  {services.map(service => (
+    <ServicesTier
+      title={service.title}        
+      description={service.description} 
+      features={service.features}  
+      ctaText='Agenda tu Llamada Gratuita'
+    />
+  ))}
   <figure class="graph01">
     <img src="src/assets/graph-01.svg" alt="gráfico-01" />
   </figure>
@@ -55,42 +81,41 @@ const features: Feature[] = [
 
 <style>
   .services-wrap {
-  position: relative;
-  display: grid;
-  place-items: center;
-  padding: 4rem clamp(1rem, 0.714rem + 1.43vw, 2rem) 8rem;
-  gap:4rem;
-  overflow: hidden;
-  
-}
-
-.services-title {
-  display: flex;
-  text-align: center;
-
-}
-
-.graph01 {
-  position: absolute;
-  width: 30vi;
-  left: -100px;
-  top: 8%;
-  transform: translateY(-50%); 
-  transform: scaleY(-1);
-}
-
-.graph02 {
-  position: absolute;
-  width: 25vi;
-  right: -250px;
-  top: 50%;
-  transform: translateY(-50%); 
-  rotate: 270deg;
-}
-
-@media (width < 425px) {
-  .graph01, .graph02 {
-    display: none;
+    position: relative;
+    display: grid;
+    place-items: center;
+    padding: 4rem clamp(1rem, 0.714rem + 1.43vw, 2rem) 8rem;
+    gap: 4rem;
+    overflow: hidden;
   }
-}
+
+  .services-title {
+    display: flex;
+    text-align: center;
+  }
+
+  .graph01 {
+    position: absolute;
+    width: 30vi;
+    left: -100px;
+    top: 8%;
+    transform: translateY(-50%);
+    transform: scaleY(-1);
+  }
+
+  .graph02 {
+    position: absolute;
+    width: 25vi;
+    right: -250px;
+    top: 50%;
+    transform: translateY(-50%);
+    rotate: 270deg;
+  }
+
+  @media (width < 425px) {
+    .graph01,
+    .graph02 {
+      display: none;
+    }
+  }
 </style>

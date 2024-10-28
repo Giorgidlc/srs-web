@@ -14,9 +14,6 @@ const { title } = Astro.props;
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    
-/>
     <title>{title}</title>
   </head>
   <body>
@@ -86,26 +83,31 @@ const { title } = Astro.props;
     font-size: clamp(3rem, 2.143rem + 4.29vw, 6rem);
     line-height: clamp(3.125rem, 2.304rem + 4.11vw, 5.5rem);
     font-weight: 600;
+
   }
 
   h2 {
     font-size: clamp(2.75rem, 2.464rem + 1.43vw, 3.75rem);
     line-height: clamp(2.75rem, 2.464rem + 1.43vw, 3.75rem);
     font-weight: 600;
+    text-wrap: pretty;
   }
 
   h3 {
     font-size: clamp(1.8rem, 1.671rem + 0.64vw, 2.25rem);
     line-height: clamp(1.8rem, 1.671rem + 0.64vw, 2.25rem);
     font-weight: 500;
+    text-wrap: pretty;
   }
 
   h4 {
     font-size: clamp(0.8rem, 0.707rem + 0.46vw, 1.125rem);
+    text-wrap: pretty;
   }
 
   p {
     font-size: (1rem, 0.786rem + 1.07vw, 1.75rem);
+    text-wrap: pretty;
   }
 
   button {
