@@ -14,6 +14,12 @@ const { title } = Astro.props;
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap"
+      rel="stylesheet"
+    />
     <title>{title}</title>
   </head>
   <body>
@@ -22,7 +28,8 @@ const { title } = Astro.props;
       <slot />
     </main>
     <Footer />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+    ></script>
   </body>
 </html>
 
@@ -41,12 +48,11 @@ const { title } = Astro.props;
     --color-contrast-3: #003d5b;
     --color-acent: #d1495b;
     --color-acent-2: #edae49;
-  
 
-    @font-face {
+  /*   @font-face {
       font-family: "Baloo 2";
       src: url("./public/fonts/Baloo2-VariableFont_wght.ttf");
-    }
+    } */
 
     font-family: "Baloo 2", Arial, sans-serif;
     line-height: 1.5;
@@ -83,7 +89,6 @@ const { title } = Astro.props;
     font-size: clamp(3rem, 2.143rem + 4.29vw, 6rem);
     line-height: clamp(3.125rem, 2.304rem + 4.11vw, 5.5rem);
     font-weight: 600;
-
   }
 
   h2 {
