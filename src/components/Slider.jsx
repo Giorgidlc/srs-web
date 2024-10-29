@@ -2,7 +2,7 @@ import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/navigation'
-import '../styles/Slider.css'
+import '../styles/slider.css'
 
 
 export const Slider = ({ slides }) => {
