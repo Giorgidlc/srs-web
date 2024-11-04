@@ -15,7 +15,7 @@ const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(mess
   class="whatsapp-button"
 >
   <span>
-    <img src="src/assets/whatsApp-icon.webp" alt="icono-whatsapp" />
+    <img src="/assets/whatsApp-icon.webp" alt="icono-whatsapp" />
   </span>
   ¡Agenda tu llamada gratuita!
 </a>
@@ -43,6 +43,7 @@ const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(mess
     max-width: 60px;
     & img {
       flex-grow: 1;
+      object-fit: contain;
     }
   }
 
