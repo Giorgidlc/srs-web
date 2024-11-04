@@ -9,9 +9,9 @@ const items = [
       'Entre 1 - 2 meses dependiendo de disponibilidad de candidato y consultor',
   },
   {
-    title: '¿Cuántas sesiones son , en qué modalidad y cuánto dura cada una?',
+    title: '¿Cuántas sesiones son, cuanto dura cada sesión y que modalidad tienen?',
     content:
-      'Mínimo 4 y Máximo 6 dependiendo de las necesidades del perfil, online y entre 60-90 minutos por sesión.',
+      'Tiene un mínimo de 4 sesiones y un máximo de 6, dependiendo de las necesidades del perfil, la modalidad es online entre 60-90 minutos por cada sesión.',
   },
   {
     title: '¿Conseguiré un empleo rápido?',
@@ -35,12 +35,12 @@ const items = [
   <h3>Preguntas Frecuentes</h3>
   <Accordion items={items} />
   <p>
-    No te prometo el trabajo de tus sueños, pero sí que tendrás un perfil mucho más
+    <strong>No te prometo el trabajo de tus sueños, pero sí que tendrás un perfil mucho más
     enfocado con el cuál tus posibilidades de obtener entrevistas en España
-    aumentarán.
+    aumentarán.</strong>
   </p>
   <p>
-    <strong>¡Quieres más detalles del ¿Cómo lo hago? conversemos...</strong>
+    <strong>Quieres más detalles del ¿Cómo lo hago? ¡Conversemos!</strong>
   </p>
   <ButtonCTA
     phoneNumber="+34666822778"
@@ -59,6 +59,9 @@ const items = [
   padding: 0rem clamp(1rem, 0.714rem + 1.43vw, 2rem) 4rem;
   justify-items: center;
   z-index: -10;
+  & p {
+    text-align: center;
+  }
 
   & a {
     width: min-content;
