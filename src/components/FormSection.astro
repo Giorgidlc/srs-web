@@ -23,8 +23,8 @@
         placeholder="¿En qué podemos ayudarte?"></textarea>
     </label>
     <label>
-      <input type="checkbox" name="checkbox" id="checkbox" required /> Acepto la política
-      de privacidad.
+      <input type="checkbox" name="checkbox" id="checkbox" required /> 
+      <span>Acepto la política de privacidad.</span><a href="/aviso-legal">+ info Política de Privacidad</a>
     </label>
 
     <button class="btn-submit">Enviar</button>
@@ -58,6 +58,7 @@
 
   & label:has(input[name="checkbox"]){
     display: flex;
+    text-wrap: nowrap;
     align-items: stretch;
     gap: 1rem;
     width: max(35%, 320px);
