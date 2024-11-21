@@ -75,31 +75,17 @@
   }
 }
 
-.modal {
-  position: fixed; 
-  left: 0;
-  top: 0;
-  width: 100%; 
-  height: 100%; 
-  background-color: rgba(0, 0, 0, 0.5); 
+.box-response {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
+  background-color: var(--color-base);
+  height: max(24dvb);
+  gap: 0.8rem;
+
 }
 
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; 
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; 
+.box-response__title, .box-response__description {
+  color: var(--color-base-2)
 }
-
-
-#g-recaptcha-response {
-  display: block !important;
-  position: absolute;
-  margin: -50px 0 0 0 !important;
-  z-index: -999999;
-  opacity: 0;
-  }
