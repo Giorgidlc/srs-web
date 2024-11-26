@@ -1,7 +1,7 @@
 
 
-<nav class="header-logo">
-  <img class="logo" src="/imagotipo-srs.svg" alt="Logotipo-SRS-Empleabilidad-y-Formación"/>
+<nav class="header-logo"><a href="/">
+  <img class="logo" src="/imagotipo-srs.svg" alt="Logotipo-SRS-Empleabilidad-y-Formación"/></a>
   <!-- <ul class="nav-list">
     <li><a href="#about">¿Quién Soy?</a></li>
     <li><a href="#how-do-it">¿Cómo lo Hago?</a></li>
@@ -15,14 +15,19 @@
   .header-logo {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-areas: ". logo nav";
+  grid-template-areas: ". logo .";
   align-items: center;
   justify-items: center;
+  
+  & a {
+    grid-area: logo;
+    
+  }
     
 }
 
 .logo {
-  grid-area: logo;
+  
   height: clamp(7rem, 6.143rem + 4.29vw, 10rem);
   padding: 0rem;
   will-change: filter;

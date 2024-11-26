@@ -7,7 +7,7 @@ interface LinkedInArticle {
 }
 
 const article1: LinkedInArticle = {
-  title: "¿A qué chilenos les conviene probar suerte en España?",
+  title: "Las Últimas Noticias, Chile 2024",
   description: "Descripción del artículo 1",
   href: "https://www.lun.com/Pages/NewsDetail.aspx?dt=2024-01-01&EsAviso=0&PaginaId=16&bodyid=0",
   image: "/assets/news-01.webp",
@@ -35,12 +35,12 @@ const articles: LinkedInArticle[] = [article1, article2, article3];
   <div class="container-news-highlights">
     {
       articles.map((article) => (
+      <a target="_blank" href={article.href}>
         <div class="card-news-highlights">
-          <a target="_blank" href={article.href}>
             <img src={article.image} alt={article.title} />
-          </a>
           <h5>{article.title}</h5>
         </div>
+      </a>
       ))
     }
   </div>
@@ -64,6 +64,10 @@ const articles: LinkedInArticle[] = [article1, article2, article3];
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     padding: 1rem clamp(1rem, 0.714rem + 1.43vw, 2rem);
     gap: 1rem;
+    & a {
+      display: flex;
+  
+    }
 
   }
 
@@ -72,32 +76,32 @@ const articles: LinkedInArticle[] = [article1, article2, article3];
     display: flex;
     flex-direction: column;
     background-color: var(--color-contrast);
-
-    & a {
-      display: flex;
-      height: max(32dvh);
+    aspect-ratio: 4 / 3;
+    
       & img {
         width: 100%;
         object-fit: cover;
         mix-blend-mode: soft-light;
+        height: 100%;
+        
       }
-    }
+  
 
     & h5 {
       position: absolute;
       text-align: left;
       color: var(--color-contrast-3);
       width: auto;
-      max-width: 50%;
+      max-width: 80%;
       bottom: 1rem;
       left: 1rem;
       text-transform: uppercase;
       background-color: var(--color-acent-2);
       padding: 0.5rem 1rem;
       border-radius: 2rem;
-      overflow: hidden;
+      /* overflow: hidden;
       white-space: nowrap;
-      text-overflow: ellipsis;
+      text-overflow: ellipsis; */
 
       &:hover{
         white-space: normal;

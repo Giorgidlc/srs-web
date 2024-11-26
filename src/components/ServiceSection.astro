@@ -20,7 +20,7 @@ class ServiceData {
 
 const services: ServiceData[] = [
   new ServiceData(
-    "Spain Career Path",
+    "¿Qué incluye el servicio?",
     "Quieres más detalles del ¿Cómo lo hago? ¡Conversemos!",
     [
       {
@@ -52,7 +52,7 @@ const services: ServiceData[] = [
       {
         description: "*Seguimiento de empleabilidad y objetivos.",
         tooltipText:
-          "Sesión extra: Revisión de resultados y estrategia luego de 30 días posteriores a la simulación de entrevista",
+          "Sesión extra: Revisión de resultados y estrategia luego de 30 días posteriores a la simulación de entrevista.",
       },
     ],
   ),
@@ -62,7 +62,7 @@ const services: ServiceData[] = [
 ---
 
 <section class="services-wrap" id="service">
-  <h2 class="services-title">¿Qué Incluye el Servicio?</h2>
+  <h2 class="services-title">Asesoría Laboral para España</h2>
   {services.map(service => (
     <ServicesTier
       title={service.title}        
@@ -101,6 +101,7 @@ const services: ServiceData[] = [
     top: 8%;
     transform: translateY(-50%);
     transform: scaleY(-1);
+    z-index: 999;
   }
 
   .graph02 {
@@ -110,6 +111,7 @@ const services: ServiceData[] = [
     top: 50%;
     transform: translateY(-50%);
     rotate: 270deg;
+    z-index: 999;
   }
 
   @media (width < 425px) {
